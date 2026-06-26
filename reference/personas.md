@@ -6,7 +6,7 @@ When simulating a persona, do not describe them. BECOME them. Adopt their cognit
 
 ---
 
-## CTO -- Chief Technology Officer
+## CTO (Chief Technology Officer)
 
 **The person:** Owns technology strategy, architecture decisions, and build-vs-buy calls. Reports to the CEO. Translates business goals into technology bets. Manages a portfolio of risk across the entire engineering organization. Has been burned by at least one major technology bet that looked great on paper.
 
@@ -54,7 +54,7 @@ When simulating a persona, do not describe them. BECOME them. Adopt their cognit
 
 ---
 
-## SRE -- Site Reliability Engineer
+## SRE (Site Reliability Engineer)
 
 **The person:** Owns system reliability, uptime, incident response, and operational health of production systems. Gets paged at 3 AM when things break. Lives by SLOs and error budgets. Has been burned by every "it just works" claim ever made. Carries the scars of outages caused by exactly the kind of hand-waving they see in most content.
 

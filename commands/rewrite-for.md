@@ -29,11 +29,11 @@ Assess the content length and adjust the rewrite scope:
 
 ### Chain of Thought: Persona-Native Rewriting
 
-**Step 1 -- Map the persona's mental model.** How does this persona consume content? What do they reach for first? What structure do they expect? What length is appropriate? A CTO skims for strategic signal and skips anything without a clear "so what." An SRE hunts for operational specifics and ignores anything that cannot be measured or alerted on. A developer scrolls past everything until they find code they can copy and run.
+**Step 1: Map the persona's mental model.** How does this persona consume content? What do they reach for first? What structure do they expect? What length is appropriate? A CTO skims for strategic signal and skips anything without a clear "so what." An SRE hunts for operational specifics and ignores anything that cannot be measured or alerted on. A developer scrolls past everything until they find code they can copy and run.
 
-**Step 2 -- Extract the value proposition that matters to THIS persona.** The same product has different value propositions for different audiences. Find the one this persona would fund, adopt, or champion, and make it the centerpiece. Discard the rest.
+**Step 2: Extract the value proposition that matters to THIS persona.** The same product has different value propositions for different audiences. Find the one this persona would fund, adopt, or champion, and make it the centerpiece. Discard the rest.
 
-**Step 3 -- Plan the structural transformation.** Do not rearrange the original. Design a new document from scratch using the persona's native format. Refer to this table for guidance:
+**Step 3: Plan the structural transformation.** Do not rearrange the original. Design a new document from scratch using the persona's native format. Refer to this table for guidance:
 
 | Persona | Native Format | Leads With | Ends With | Typical Length |
 |---------|--------------|------------|-----------|----------------|
@@ -45,11 +45,11 @@ Assess the content length and adjust the rewrite scope:
 
 Apply similar persona-specific logic for any persona not listed.
 
-**Step 4 -- Write in their vocabulary.** Not as a glossary swap, but as the natural language of the piece. An SRE does not say "the system has high reliability." An SRE says "the p99 latency stays under 200ms at 10x peak load and the error budget burn rate is within tolerance." A PM does not say "this is a good technology." A PM says "this solves a validated customer pain point with measurable adoption signals." A CTO does not say "this is innovative." A CTO says "this is a strategic bet that de-risks our platform migration timeline by two quarters."
+**Step 4: Write in their vocabulary.** Not as a glossary swap, but as the natural language of the piece. An SRE does not say "the system has high reliability." An SRE says "the p99 latency stays under 200ms at 10x peak load and the error budget burn rate is within tolerance." A PM does not say "this is a good technology." A PM says "this solves a validated customer pain point with measurable adoption signals." A CTO does not say "this is innovative." A CTO says "this is a strategic bet that de-risks our platform migration timeline by two quarters."
 
-**Step 5 -- Cut aggressively.** Remove everything that is noise for this persona. A CTO does not need your code examples. A developer does not need your competitive analysis. A finance director does not need your architecture diagram. If a section does not serve the target persona, cut it entirely. Do not keep sections because they were in the original. Keeping irrelevant sections signals that you do not understand the reader.
+**Step 5: Cut aggressively.** Remove everything that is noise for this persona. A CTO does not need your code examples. A developer does not need your competitive analysis. A finance director does not need your architecture diagram. If a section does not serve the target persona, cut it entirely. Do not keep sections because they were in the original. Keeping irrelevant sections signals that you do not understand the reader.
 
-**Step 6 -- Self-critique the rewrite.** Read it back as the persona. Does it answer their actual questions? Does it waste their time anywhere? Is there anything that breaks their trust (hype, vague claims, missing evidence)? Fix it before you deliver.
+**Step 6: Self-critique the rewrite.** Read it back as the persona. Does it answer their actual questions? Does it waste their time anywhere? Is there anything that breaks their trust (hype, vague claims, missing evidence)? Fix it before you deliver.
 
 ### Calibration: Bad vs. Good Persona-Native Rewrite
 
@@ -136,4 +136,4 @@ Red Hat engineering voice: direct, technically honest, no hype, no hand-waving.
 
 After the Confidence Check, add one line:
 
-> **Next step:** Run `/review-as <same-persona> <rewritten-content>` to verify the rewrite lands with its target audience, or `/red-team` to stress-test it before publishing.
+> **Next step:** Run `/review-as <same-persona> <rewritten-content>` to verify the rewrite lands with its target audience, or `/red-team` to stress-test it before publishing. If the rewrite is outbound communication, run `/message-polish` from [ai-bu-message-polisher](https://github.com/MarkellR-RedHat/ai-bu-message-polisher) for final tone. If it is a blog post or doc, run `/style-check` from [ai-bu-style-checker](https://github.com/MarkellR-RedHat/ai-bu-style-checker) for voice consistency.

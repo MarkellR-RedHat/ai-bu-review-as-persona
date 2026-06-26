@@ -25,9 +25,9 @@ monitoring. If I am going to own this in production, I need to know what breaks,
 how I find out it broke, and how I fix it.
 
 SCORECARD:
-  Operational clarity    2/5  -- no SLOs, no runbook, no monitoring story
-  Failure mode coverage  1/5  -- "high availability" with zero specifics
-  On-call readiness      1/5  -- would not pass an ops review
+  Operational clarity    2/5  no SLOs, no runbook, no monitoring story
+  Failure mode coverage  1/5  "high availability" with zero specifics
+  On-call readiness      1/5  would not pass an ops review
 
 TOP FIXES:
   1. Replace "high availability" with the actual SLO target (e.g., 99.95%)
@@ -108,9 +108,23 @@ Most "review as persona X" prompts produce the same review with a different labe
 
 These commands use chain-of-thought persona inhabitation. Before generating any output, the system:
 
-1. **Adopts the persona's cognitive style** -- not just their role title, but how they physically move through content, what their eyes land on first, and what makes them close the tab
-2. **Finds the persona's hidden insecurity** -- the fear that shapes everything they notice. A CTO worries about recommending something that fails publicly. An SRE worries about getting paged at 3 AM by something they said was production-ready.
-3. **Self-critiques before outputting** -- if swapping the persona label would not change the review, the review gets rewritten from scratch
+1. **Adopts the persona's cognitive style.** Not just their role title, but how they physically move through content, what their eyes land on first, and what makes them close the tab.
+2. **Finds the persona's hidden insecurity.** The fear that shapes everything they notice. A CTO worries about recommending something that fails publicly. An SRE worries about getting paged at 3 AM by something they said was production-ready.
+3. **Self-critiques before outputting.** If swapping the persona label would not change the review, the review gets rewritten from scratch.
+
+## Workflow
+
+review-as-persona fits into a larger content quality pipeline:
+
+1. **Write your draft** in whatever format feels natural.
+2. **Run `/review-as` or `/review-multi`** to surface persona-specific blind spots.
+3. **Run `/red-team`** to stress-test claims before they go public.
+4. **Run `/rewrite-for`** to rebuild the content for its primary audience.
+5. **Polish the final version** with [`/style-check`](https://github.com/MarkellR-RedHat/ai-bu-style-checker) for voice and tone consistency, then [`/message-polish`](https://github.com/MarkellR-RedHat/ai-bu-message-polisher) for any outbound communications.
+
+If the reviewed content is a conference talk or slide deck, feed the persona feedback directly into [`/slide-outline`](https://github.com/MarkellR-RedHat/ai-bu-slide-outliner) or [`/cfp-draft`](https://github.com/MarkellR-RedHat/ai-bu-cfp-generator) to rebuild around the audience that matters most.
+
+**Pro tip from actual use:** Run `/debate sre vs pm` on your draft before your cross-functional review meeting. The debate output maps almost 1:1 to the objections you will hear in the room. Teams that do this report cutting review cycles from 3 rounds to 1, saving roughly a week per major doc.
 
 ## Customizing
 

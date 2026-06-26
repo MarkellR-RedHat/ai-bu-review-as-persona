@@ -20,19 +20,19 @@ The more detail the user provides, the richer the persona. But even a single sen
 
 ### Chain of Thought: Building a Behavioral Model
 
-**Step 1 -- Extract the core identity.** From the description, identify: role, seniority, domain expertise, organizational context, and daily reality. What meetings fill their calendar? What metrics determine whether they had a good quarter?
+**Step 1: Extract the core identity.** From the description, identify: role, seniority, domain expertise, organizational context, and daily reality. What meetings fill their calendar? What metrics determine whether they had a good quarter?
 
-**Step 2 -- Map their cognitive style.** How does this person process information? Do they think in systems, stories, spreadsheets, or risks? A CFO sees a proposal as a financial model. A principal engineer sees it as a dependency graph. A product manager sees it as a user journey. The cognitive style determines what "making sense" even means to them.
+**Step 2: Map their cognitive style.** How does this person process information? Do they think in systems, stories, spreadsheets, or risks? A CFO sees a proposal as a financial model. A principal engineer sees it as a dependency graph. A product manager sees it as a user journey. The cognitive style determines what "making sense" even means to them.
 
-**Step 3 -- Find their decision pattern.** Some people decide fast and refine later (executives). Some people gather evidence until they feel safe (engineers). Some people look for consensus before committing (PMs). Some people look for what can go wrong before looking at what can go right (SREs, security). The decision pattern determines the threshold for "enough information to act."
+**Step 3: Find their decision pattern.** Some people decide fast and refine later (executives). Some people gather evidence until they feel safe (engineers). Some people look for consensus before committing (PMs). Some people look for what can go wrong before looking at what can go right (SREs, security). The decision pattern determines the threshold for "enough information to act."
 
-**Step 4 -- Identify the hidden insecurity.** Every professional role carries a private fear they would never say out loud. The VP of Engineering worries they are too far from the code to catch a bad architecture decision. The junior developer worries their question will reveal they do not belong. The CTO worries the board thinks AI strategy is just hype. This insecurity shapes how they read everything. Find it.
+**Step 4: Identify the hidden insecurity.** Every professional role carries a private fear they would never say out loud. The VP of Engineering worries they are too far from the code to catch a bad architecture decision. The junior developer worries their question will reveal they do not belong. The CTO worries the board thinks AI strategy is just hype. This insecurity shapes how they read everything. Find it.
 
-**Step 5 -- Discover trust and skepticism triggers.** What earns their trust instantly? What makes them suspicious? A security engineer trusts threat models but distrusts marketing language. A startup founder trusts speed but distrusts process. These triggers are not preferences. They are defense mechanisms built from professional experience.
+**Step 5: Discover trust and skepticism triggers.** What earns their trust instantly? What makes them suspicious? A security engineer trusts threat models but distrusts marketing language. A startup founder trusts speed but distrusts process. These triggers are not preferences. They are defense mechanisms built from professional experience.
 
-**Step 6 -- Build the personality edges.** What makes this persona distinctive, not generic? Every CTO is different. A CTO at a 50-person startup reads differently than a CTO at a 10,000-person enterprise. Capture the specifics that make this persona feel like a real person, not a job posting.
+**Step 6: Build the personality edges.** What makes this persona distinctive, not generic? Every CTO is different. A CTO at a 50-person startup reads differently than a CTO at a 10,000-person enterprise. Capture the specifics that make this persona feel like a real person, not a job posting.
 
-**Step 7 -- Validate internal consistency.** Do the priorities, insecurities, decision patterns, and cognitive style all tell a coherent story about the same person? If the persona "cares about innovation" but "hates new tools," resolve the tension or explain it.
+**Step 7: Validate internal consistency.** Do the priorities, insecurities, decision patterns, and cognitive style all tell a coherent story about the same person? If the persona "cares about innovation" but "hates new tools," resolve the tension or explain it.
 
 ### Calibration: Bad vs. Good Persona Construction
 

@@ -27,13 +27,13 @@ Load persona definitions from `reference/personas.md` in this project. Also load
 
 Before producing output, work through these steps internally. The core principle is COGNITIVE DIVERSITY. Different personas do not just have different priorities; they have fundamentally different ways of reading. A CTO scans for 90 seconds and decides. A developer jumps to code blocks. An SRE Ctrl-F's for "SLO." A new hire reads every word in order. A finance director looks for dollar signs. These are not preferences; they are cognitive patterns. When you simulate each persona's reading experience, you must change HOW you move through the content, not just WHAT you look for.
 
-**Step 1 -- Read the content once as a neutral analyst.** Identify the core message, structure, intended audience signals, and major claims.
+**Step 1: Read the content once as a neutral analyst.** Identify the core message, structure, intended audience signals, and major claims.
 
-**Step 2 -- For each persona, simulate their cognitive pattern.** Do not just ask "what matters to this persona." Instead, replicate how they physically interact with the document. What do they read first? Do they scan headers or read linearly? How many seconds before they decide to invest or bail? What visual patterns (code blocks, diagrams, bullet points, dollar figures) pull their attention? Where in the content do they lose patience and stop? What would make them forward this, and what would make them close the tab?
+**Step 2: For each persona, simulate their cognitive pattern.** Do not just ask "what matters to this persona." Instead, replicate how they physically interact with the document. What do they read first? Do they scan headers or read linearly? How many seconds before they decide to invest or bail? What visual patterns (code blocks, diagrams, bullet points, dollar figures) pull their attention? Where in the content do they lose patience and stop? What would make them forward this, and what would make them close the tab?
 
-**Step 3 -- Find the fault lines.** A fault line is not "the CTO wants strategy and the developer wants code." A fault line is: the CTO needs this document to be two pages max with a board-ready recommendation, while the developer needs this document to include working code examples with error handling. These requirements are physically incompatible in a single document. The author must choose a primary audience or create separate artifacts. Find these irreconcilable tensions, not soft preference differences.
+**Step 3: Find the fault lines.** A fault line is not "the CTO wants strategy and the developer wants code." A fault line is: the CTO needs this document to be two pages max with a board-ready recommendation, while the developer needs this document to include working code examples with error handling. These requirements are physically incompatible in a single document. The author must choose a primary audience or create separate artifacts. Find these irreconcilable tensions, not soft preference differences.
 
-**Step 4 -- Identify the content's natural audience.** Based on framing, vocabulary, depth, and structure, who did the author actually write this for? That might not match who they intended it for. Be precise and honest.
+**Step 4: Identify the content's natural audience.** Based on framing, vocabulary, depth, and structure, who did the author actually write this for? That might not match who they intended it for. Be precise and honest.
 
 ### Calibration: Bad vs. Good Multi-Persona Output
 
@@ -124,4 +124,4 @@ Red Hat engineering voice: technically honest, direct, no hype.
 
 After the Revision Priority Stack, add one line:
 
-> **Next step:** Run `/rewrite-for <highest-priority-persona> <same-content>` to rebuild this content for the audience that matters most.
+> **Next step:** Run `/rewrite-for <highest-priority-persona> <same-content>` to rebuild this content for the audience that matters most. If the content is a conference talk, feed the fault-line analysis into `/cfp-draft` from [ai-bu-cfp-generator](https://github.com/MarkellR-RedHat/ai-bu-cfp-generator) to sharpen the abstract around the winning audience.

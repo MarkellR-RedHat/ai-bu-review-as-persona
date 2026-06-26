@@ -34,15 +34,15 @@ If the content portion looks like a file path (starts with `/`, `./`, `~`, or en
 
 ### Chain of Thought: Setting Up the Debate
 
-**Step 1 -- Internalize both personas separately.** For each, identify: their top 3 non-negotiable priorities, what they skim past, what makes them stop reading, and the single sentence that would make them forward this content vs. close the tab.
+**Step 1: Internalize both personas separately.** For each, identify: their top 3 non-negotiable priorities, what they skim past, what makes them stop reading, and the single sentence that would make them forward this content vs. close the tab.
 
-**Step 2 -- Read the content through each lens and find the fractures.** Where optimizing for one persona BREAKS the content for the other. A CTO wants a one-page strategic brief. An SRE wants operational runbooks. These are not "different perspectives" that harmonize with compromise. They are fundamentally incompatible document types. Find those incompatibilities.
+**Step 2: Read the content through each lens and find the fractures.** Where optimizing for one persona BREAKS the content for the other. A CTO wants a one-page strategic brief. An SRE wants operational runbooks. These are not "different perspectives" that harmonize with compromise. They are fundamentally incompatible document types. Find those incompatibilities.
 
-**Step 3 -- Identify the zero-sum conflicts.** Not "they have different priorities" observations. Find the places where giving one persona what they need actively takes away what the other persona needs. These conflicts are where the debate earns its value. If you cannot find at least two, you have not looked hard enough.
+**Step 3: Identify the zero-sum conflicts.** Not "they have different priorities" observations. Find the places where giving one persona what they need actively takes away what the other persona needs. These conflicts are where the debate earns its value. If you cannot find at least two, you have not looked hard enough.
 
-**Step 4 -- Let them fight.** Each persona makes their strongest case, directly rebuts the other's points, and REFUSES TO CONCEDE on their core priority. The SRE does not say "the CTO makes a good point about brevity." The SRE says "If you ship this without operational specifics, every customer SRE who reads it will assume you do not have them. Brevity is not a virtue when it means hiding the absence of failure mode analysis."
+**Step 4: Let them fight.** Each persona makes their strongest case, directly rebuts the other's points, and REFUSES TO CONCEDE on their core priority. The SRE does not say "the CTO makes a good point about brevity." The SRE says "If you ship this without operational specifics, every customer SRE who reads it will assume you do not have them. Brevity is not a virtue when it means hiding the absence of failure mode analysis."
 
-**Step 5 -- Synthesize honestly.** Do not split the difference. Identify which persona's concerns are more critical for THIS specific content, name the question underneath the debate that neither persona is surfacing, and recommend accordingly.
+**Step 5: Synthesize honestly.** Do not split the difference. Identify which persona's concerns are more critical for THIS specific content, name the question underneath the debate that neither persona is surfacing, and recommend accordingly.
 
 ### Calibration: Bad vs. Good Debate Output
 
@@ -84,7 +84,7 @@ One paragraph. What is the content? What is the fundamental, irreconcilable tens
 The 2-3 points where the personas directly, irreconcilably disagree. For each clash:
 
 **The Issue:** The specific aspect in dispute, framed as a forced choice.
-**[Persona 1 Name]:** "You are wrong about this because..." -- a direct rebuttal, not a parallel concern. 2-3 sentences.
+**[Persona 1 Name]:** "You are wrong about this because...", a direct rebuttal, not a parallel concern. 2-3 sentences.
 **[Persona 2 Name]:** A counter that addresses Persona 1's actual argument, not a topic change. 2-3 sentences.
 **[Persona 1 Name] responds:** Final rebuttal. 1-2 sentences.
 **[Persona 2 Name] responds:** Final rebuttal. 1-2 sentences.
@@ -117,7 +117,7 @@ Step out of both personas and deliver:
 - [ ] The debate reveals a tension a single-persona review would have missed entirely
 - [ ] The "Question Nobody Is Asking" names something neither persona said
 - [ ] "Both perspectives are valid" is banned. Pick a side. Defend it. Name the cost.
-- [ ] No em dashes anywhere in the output (use --, commas, or restructure)
+- [ ] No em dashes anywhere in the output (use commas, colons, or restructure)
 
 ### Tone
 

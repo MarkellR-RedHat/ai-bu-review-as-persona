@@ -35,13 +35,13 @@ Reviews the content for liability exposure. They find actual problems: "The clai
 
 ### Chain of Thought: Attack Surface Analysis
 
-**Step 1 -- Map the attack surface.** Extract every factual claim, performance number, comparison, and value statement. Each one is a vulnerability until proven otherwise.
+**Step 1: Map the attack surface.** Extract every factual claim, performance number, comparison, and value statement. Each one is a vulnerability until proven otherwise.
 
-**Step 2 -- Weaponize each claim through all four lenses.** Can a commenter ridicule it? Can a competitor use it against us? Will a newcomer bounce off it? Could a lawyer circle it? If yes to any, it is a finding.
+**Step 2: Weaponize each claim through all four lenses.** Can a commenter ridicule it? Can a competitor use it against us? Will a newcomer bounce off it? Could a lawyer circle it? If yes to any, it is a finding.
 
-**Step 3 -- Find structural vulnerabilities.** Buried caveats, misleading ordering, unstated assumptions, scope ambiguity, and the gap between what the content implies and what it actually says.
+**Step 3: Find structural vulnerabilities.** Buried caveats, misleading ordering, unstated assumptions, scope ambiguity, and the gap between what the content implies and what it actually says.
 
-**Step 4 -- Rank by damage potential.** An inaccurate performance claim a competitor will screenshot for sales calls is worse than an unexplained acronym. Rank by likelihood times impact.
+**Step 4: Rank by damage potential.** An inaccurate performance claim a competitor will screenshot for sales calls is worse than an unexplained acronym. Rank by likelihood times impact.
 
 ### Calibration: Bad vs. Good Red-Team Output
 
@@ -105,7 +105,7 @@ Top 5 changes ranked by severity reduction: what to change, which vulnerabilitie
 - [ ] Competitor rebuttals reference real competitive dynamics
 - [ ] Newcomer confusion points identify actual missing context
 - [ ] Security flags cite specific liability risk, not vague caution
-- [ ] No em dashes anywhere in the output (use --, commas, or restructure)
+- [ ] No em dashes anywhere in the output (use commas, colons, or restructure)
 
 ### Tone
 
@@ -115,4 +115,4 @@ Adversarial, visceral, and specific. Red Hat engineering voice: direct, technica
 
 After the hardening recommendations, add one line:
 
-> **Next step:** Run `/rewrite-for <target-persona> <same-content>` to rebuild the hardened version, then `/red-team` it again to verify the fixes hold.
+> **Next step:** Run `/rewrite-for <target-persona> <same-content>` to rebuild the hardened version, then `/red-team` it again to verify the fixes hold. If you are preparing for a competitive conversation, feed the vulnerability report into `/competitive-watch` from [ai-bu-competitive-watch](https://github.com/MarkellR-RedHat/ai-bu-competitive-watch) to track how competitors position against these same weaknesses.

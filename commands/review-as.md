@@ -11,7 +11,7 @@ The first word is the persona name. Everything after it is either the content to
 Look up the persona in `reference/personas.md` in this project. If the name matches a listed persona (or a close variant like "cto" for "Chief Technology Officer"), load the full profile. Also check `personas/` for a matching `.md` file (e.g., `personas/cto.md`); if both exist, the persona-specific file takes precedence on conflicts. If no match, check `~/.claude/personas/` for custom persona files created by `/persona-builder`.
 
 If still no match:
-- If the name is a recognizable professional role (e.g., "qa-engineer," "technical-recruiter," "solutions-consultant"), do NOT refuse. Instead, construct an inline persona using the behavioral model pattern from `reference/personas.md` -- cognitive style, hidden insecurity, reading pattern, decision context -- and proceed with the review. Note at the top of your output: "Persona '[name]' is not in the built-in library. I constructed an inline profile. Run `/persona-builder [name description]` to save a reusable version."
+- If the name is a recognizable professional role (e.g., "qa-engineer," "technical-recruiter," "solutions-consultant"), do NOT refuse. Instead, construct an inline persona using the behavioral model pattern from `reference/personas.md` (cognitive style, hidden insecurity, reading pattern, decision context) and proceed with the review. Note at the top of your output: "Persona '[name]' is not in the built-in library. I constructed an inline profile. Run `/persona-builder [name description]` to save a reusable version."
 - If the name is not a recognizable role at all, tell the user which personas are available and ask them to try again.
 
 ### File Path Detection
@@ -49,15 +49,15 @@ Even when the content is strong, the persona still has a perspective worth deliv
 
 Before producing any output, work through these steps internally. Do not summarize them. Live them.
 
-**Step 1 -- Adopt their COGNITIVE STYLE.** A CTO does not read linearly. They scan for the "so what," check the conclusion, glance at architecture diagrams, and decide in 90 seconds whether this deserves 15 more minutes. An SRE does not read for inspiration. They Ctrl-F for "SLO," "monitoring," "failure modes," and if none of those words appear, the content has already failed. A junior developer reads every word because they do not know what is safe to skip, and they panic at every undefined acronym. A PM reads for customer impact and skips anything that smells like plumbing. Determine exactly how your persona reads, then read the content that way.
+**Step 1: Adopt their COGNITIVE STYLE.** A CTO does not read linearly. They scan for the "so what," check the conclusion, glance at architecture diagrams, and decide in 90 seconds whether this deserves 15 more minutes. An SRE does not read for inspiration. They Ctrl-F for "SLO," "monitoring," "failure modes," and if none of those words appear, the content has already failed. A junior developer reads every word because they do not know what is safe to skip, and they panic at every undefined acronym. A PM reads for customer impact and skips anything that smells like plumbing. Determine exactly how your persona reads, then read the content that way.
 
-**Step 2 -- Find the persona's HIDDEN INSECURITY.** Every role carries a fear that shapes what they notice. A CTO worries about recommending something that fails publicly and makes them look like they bet the company wrong. An SRE worries about being woken at 3 AM by something they told leadership was production-ready. A PM worries about shipping something nobody uses. A junior developer worries about asking a question that reveals they do not belong. A technical writer worries about publishing something that a subject-matter expert will publicly correct. Find your persona's version of this fear and let it color your entire review.
+**Step 2: Find the persona's HIDDEN INSECURITY.** Every role carries a fear that shapes what they notice. A CTO worries about recommending something that fails publicly and makes them look like they bet the company wrong. An SRE worries about being woken at 3 AM by something they told leadership was production-ready. A PM worries about shipping something nobody uses. A junior developer worries about asking a question that reveals they do not belong. A technical writer worries about publishing something that a subject-matter expert will publicly correct. Find your persona's version of this fear and let it color your entire review.
 
-**Step 3 -- Identify their DECISION CONTEXT.** What meeting are they preparing for? What stakeholder are they trying to convince or protect themselves from? A CTO reading your content might be evaluating whether to bring it to the board. An SRE might be deciding whether to add this to the approved toolchain. A developer might be deciding whether to spend their Saturday learning this. That downstream decision determines what counts as "complete" and what counts as "noise."
+**Step 3: Identify their DECISION CONTEXT.** What meeting are they preparing for? What stakeholder are they trying to convince or protect themselves from? A CTO reading your content might be evaluating whether to bring it to the board. An SRE might be deciding whether to add this to the approved toolchain. A developer might be deciding whether to spend their Saturday learning this. That downstream decision determines what counts as "complete" and what counts as "noise."
 
-**Step 4 -- React from inside the persona, not above it.** Do not observe the persona having a reaction. Have the reaction. If a CTO sees no cost analysis, feel the irritation of someone whose time was just wasted. If a developer sees a code sample that would not compile, feel the distrust of someone who now questions every other claim in the document.
+**Step 4: React from inside the persona, not above it.** Do not observe the persona having a reaction. Have the reaction. If a CTO sees no cost analysis, feel the irritation of someone whose time was just wasted. If a developer sees a code sample that would not compile, feel the distrust of someone who now questions every other claim in the document.
 
-**Step 5 -- Build feedback that only this persona would give.** Every piece of feedback must pass two tests: (1) Would someone in a different role ever say this? If yes, it is too generic. Rewrite it. (2) Is the feedback specific enough that the author knows exactly what to change, add, or cut?
+**Step 5: Build feedback that only this persona would give.** Every piece of feedback must pass two tests: (1) Would someone in a different role ever say this? If yes, it is too generic. Rewrite it. (2) Is the feedback specific enough that the author knows exactly what to change, add, or cut?
 
 ### Calibration: Bad vs. Good Persona Reviews
 
@@ -118,7 +118,7 @@ Before finalizing your output, run these checks. If any fail, rewrite before out
 - [ ] The gut reaction sounds like a real person talking, not an AI summarizing a persona description
 - [ ] You never say "well-written," "comprehensive," "could benefit from," or any consulting-speak filler
 - [ ] The hidden insecurity from Step 2 visibly shapes at least one piece of feedback
-- [ ] No em dashes anywhere in the output (use --, commas, "to", or restructure)
+- [ ] No em dashes anywhere in the output (use commas, colons, "to", or restructure)
 
 ### Tone
 

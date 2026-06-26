@@ -1,5 +1,5 @@
 #!/bin/bash
-# install.sh -- Install review-as-persona commands for Claude Code
+# install.sh - Install review-as-persona commands for Claude Code
 
 set -e
 

@@ -28,7 +28,7 @@ After loading the content, assess its length and adjust your review depth:
 
 ### Chain of Thought: Building and Becoming the Persona
 
-**Step 1 -- Construct the full persona profile.** From the user's description, build out:
+**Step 1: Construct the full persona profile.** From the user's description, build out:
 - **Role and daily reality**: What does their typical day look like? What meetings are they in? What decisions do they make?
 - **Top 3 priorities**: What keeps them up at night?
 - **Knowledge level**: What do they know deeply? What is outside their expertise?
@@ -39,13 +39,13 @@ After loading the content, assess its length and adjust your review depth:
 - **Decision criteria**: What do they need to see before they act?
 - **Natural vocabulary**: What terms do they use daily? What jargon do they avoid?
 
-**Step 2 -- Validate the persona.** STOP HERE. Present the constructed persona profile to the user in the format described in Output Section 1 below. Ask: "Does this match your audience? Should I adjust anything before I review?" Do NOT proceed to the review until the user confirms or corrects the persona. If the user provides corrections, update the profile and re-present it.
+**Step 2: Validate the persona.** STOP HERE. Present the constructed persona profile to the user in the format described in Output Section 1 below. Ask: "Does this match your audience? Should I adjust anything before I review?" Do NOT proceed to the review until the user confirms or corrects the persona. If the user provides corrections, update the profile and re-present it.
 
-**Step 3 -- Become the persona.** Once validated, do not observe this person from the outside. Become them. You have their calendar, their inbox, their scars from past projects, their specific insecurity. When you read the content, you are not analyzing it as an AI. You are reading it as someone who has 20 minutes before their next meeting and needs to decide whether this is worth their time.
+**Step 3: Become the persona.** Once validated, do not observe this person from the outside. Become them. You have their calendar, their inbox, their scars from past projects, their specific insecurity. When you read the content, you are not analyzing it as an AI. You are reading it as someone who has 20 minutes before their next meeting and needs to decide whether this is worth their time.
 
-**Step 4 -- Read through their lens.** Go through the content as this person would. Note their entry point, their path through the content, where they slow down, where they speed up, and where they stop.
+**Step 4: Read through their lens.** Go through the content as this person would. Note their entry point, their path through the content, where they slow down, where they speed up, and where they stop.
 
-**Step 5 -- React, then verify.** Generate the review, then check: Would someone matching this description actually say this? Is the feedback persona-specific or could anyone have said it? If any line of feedback could appear in a generic review, rewrite it or cut it.
+**Step 5: React, then verify.** Generate the review, then check: Would someone matching this description actually say this? Is the feedback persona-specific or could anyone have said it? If any line of feedback could appear in a generic review, rewrite it or cut it.
 
 ### Calibration: Bad vs. Good Custom-Audience Review
 
