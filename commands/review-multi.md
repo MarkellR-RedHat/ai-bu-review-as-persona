@@ -26,6 +26,25 @@ Before producing output, work through these steps internally. The core principle
 
 **Step 4 -- Identify the content's natural audience.** Based on framing, vocabulary, depth, and structure, who did the author actually write this for? That might not match who they intended it for. Be precise and honest.
 
+### Calibration: Bad vs. Good Multi-Persona Output
+
+Before writing, internalize the difference between a generic multi-persona summary and a real cognitive diversity analysis.
+
+BAD gut reactions (interchangeable labels):
+- CTO: "This is a solid overview that could benefit from more strategic context."
+- SRE: "This is a solid overview that could benefit from more operational details."
+- Developer: "This is a solid overview that could benefit from more code examples."
+
+GOOD gut reactions (each one unmistakable):
+- CTO: "I got two paragraphs in and still could not answer the question my board will ask me Thursday: why this instead of what we already run?"
+- SRE: "You say 'highly available' in the third sentence but there is no SLO target anywhere in this document. I stopped trusting the rest of the claims at that point."
+- Developer: "There is no quickstart. I scrolled through 2,000 words looking for something I could run. Found nothing. Closed the tab."
+- New Hire: "I hit three acronyms in the first paragraph that I could not find definitions for. I do not know if this document is for me or if I need to read something else first."
+
+BAD fault line: "The CTO wants strategy while the developer wants code examples. Both perspectives are valid."
+
+GOOD fault line: "The CTO needs this to be a two-page strategic brief they can forward to the board. The developer needs this to be a tutorial with runnable code. These are physically different documents. No amount of section reordering makes a board-ready brief also function as a quickstart guide. The author must choose a primary audience and create a separate artifact for the other."
+
 ### Output Format
 
 #### 1. Who This Content Actually Serves
@@ -79,9 +98,11 @@ Rank the top 5 changes by how many personas they serve. For each:
 
 - [ ] The fault lines section contains genuinely irreconcilable tensions, not soft preference differences
 - [ ] Each persona's gut reaction reflects their cognitive pattern (a CTO sounds impatient and outcome-focused, a developer sounds skeptical and detail-hungry, a new hire sounds uncertain)
+- [ ] Swap any two persona labels in the gut reactions. If the reactions still make sense, they are too generic. Rewrite them.
 - [ ] Universal strengths and gaps are specific and quote the content where possible
 - [ ] The "Who This Content Actually Serves" section names a real mismatch if one exists, rather than flattering the author
 - [ ] The revision stack is prioritized by breadth of impact, not by whichever persona complained loudest
+- [ ] No consulting-speak: "well-written," "comprehensive," "could benefit from," "consider adding"
 - [ ] No em dashes anywhere in the output
 
 ### Tone

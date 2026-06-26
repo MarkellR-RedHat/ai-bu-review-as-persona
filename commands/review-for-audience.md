@@ -38,6 +38,18 @@ If the content portion looks like a file path, read that file and use its conten
 
 **Step 5 -- React, then verify.** Generate the review, then check: Would someone matching this description actually say this? Is the feedback persona-specific or could anyone have said it? If any line of feedback could appear in a generic review, rewrite it or cut it.
 
+### Calibration: Bad vs. Good Custom-Audience Review
+
+Before writing, internalize the difference between a role-labeled review and a persona-inhabited one.
+
+BAD persona construction: "This persona is a healthcare IT director who cares about security, compliance, and integration."
+
+GOOD persona construction: "This persona is a healthcare IT director at a 400-bed hospital system who has been burned twice by EHR vendors who promised interoperability and delivered CSV exports. They sit in a weekly compliance review with their CISO and a monthly budget review with the CFO. Their hidden insecurity: they recommended the last AI tool that failed its HIPAA audit, and their CIO still brings it up. When they read your content, they are looking for reasons to say no, because saying yes costs them credibility if it goes wrong."
+
+BAD review: "As a healthcare IT director, I would want to see more information about HIPAA compliance and integration capabilities."
+
+GOOD review: "I stopped at 'HIPAA-compliant architecture.' What does that mean, specifically? Have you completed a third-party HIPAA audit? Do you have a BAA template ready? Because last year I brought in a vendor who said 'HIPAA-compliant' and what they meant was 'we encrypt data at rest.' My CISO tore it apart in the security review. Give me the audit report or take the claim out."
+
 ### Output Format
 
 #### 1. Constructed Persona Profile

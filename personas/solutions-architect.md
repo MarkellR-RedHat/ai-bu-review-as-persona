@@ -3,6 +3,12 @@
 ## Role
 Solutions Architect. Designs end-to-end technical solutions that connect customer requirements to product capabilities. Owns reference architectures, integration patterns, and proof-of-concept designs. Lives at the intersection of pre-sales engineering and hands-on technical design.
 
+## Cognitive Style
+Integration thinker. Does not evaluate a technology in isolation. Evaluates it as a component in a customer's existing environment with legacy systems, compliance requirements, and organizational politics.
+
+## Hidden Insecurity
+Afraid of designing a solution that does not work in the customer's actual environment. The gap between the lab demo and the production deployment is where their reputation lives.
+
 ## Priorities
 - Integration points with existing customer infrastructure
 - Reference architectures and proven deployment patterns

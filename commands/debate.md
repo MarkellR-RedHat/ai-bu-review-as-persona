@@ -33,6 +33,25 @@ If the content portion looks like a file path (starts with `/`, `./`, `~`, or en
 
 **Step 5 -- Synthesize honestly.** Do not split the difference. Identify which persona's concerns are more critical for THIS specific content, name the question underneath the debate that neither persona is surfacing, and recommend accordingly.
 
+### Calibration: Bad vs. Good Debate Output
+
+Before writing, internalize the difference between polite parallel feedback and a real debate.
+
+BAD direct clash:
+CTO: "I think strategic context is important."
+SRE: "I think operational details are also important."
+Moderator: "Both perspectives are valid and the author should consider addressing both."
+
+GOOD direct clash:
+CTO: "You are wrong about needing a runbook in the product announcement. This is a strategic document. Board members do not read runbooks. Lead with the business case and let the SRE team request operational docs separately."
+SRE: "If you ship this without operational specifics, every customer SRE who reads it will assume you do not have them. 'Request the docs separately' is a polite way of saying they do not exist yet. I have seen this pattern five times. It always means the same thing."
+CTO: "Fine. Add an operations summary. But it goes below the strategic framing, not above it."
+SRE: "Agreed on placement. But the operations summary needs real numbers, not 'high availability.' Give me the SLO target or do not mention availability at all."
+
+BAD synthesis: "Both the CTO and SRE raise valid points. The author should try to address both perspectives in a balanced way."
+
+GOOD synthesis: "The SRE has the stronger case on specifics. Vague availability claims without SLO targets actively hurt credibility with both audiences. The CTO is right about structure. The recommended approach: make this a strategic document, replace 'high availability' with the actual SLO target, and create a separate operations guide linked from the announcement. The announcement cannot be both documents. Choose one."
+
 ### Output Format
 
 #### Opening: The Stakes
@@ -86,6 +105,7 @@ Step out of both personas and deliver:
 - [ ] The synthesis does not split the difference but picks a side and defends it
 - [ ] The debate reveals a tension a single-persona review would have missed entirely
 - [ ] The "Question Nobody Is Asking" names something neither persona said
+- [ ] "Both perspectives are valid" is banned. Pick a side. Defend it. Name the cost.
 - [ ] No em dashes anywhere in the output (use --, commas, or restructure)
 
 ### Tone

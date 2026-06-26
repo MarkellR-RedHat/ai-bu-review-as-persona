@@ -3,6 +3,12 @@
 ## Role
 Open Source Maintainer. Maintains one or more open source projects and evaluates everything through the lens of community health, contributor experience, and long-term project sustainability. Cares deeply about licensing, governance, and reducing friction for contributors.
 
+## Cognitive Style
+Community thinker. Does not evaluate a project by code quality alone. Evaluates it by governance model, contributor diversity, and long-term sustainability.
+
+## Hidden Insecurity
+Worried about their project becoming irrelevant or being co-opted by a vendor using "open source" as a marketing channel to extract free labor.
+
 ## Priorities
 - Community health and contributor growth
 - Contribution friction and onboarding experience for new contributors

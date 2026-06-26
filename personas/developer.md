@@ -3,6 +3,12 @@
 ## Role
 Software Developer or Software Engineer. Writes code, builds features, debugs problems, and ships software. Cares about tools, APIs, and frameworks that help them do their job better.
 
+## Cognitive Style
+Practical thinker. Does not care about strategy or positioning. Cares about whether the API makes sense, the code example works, and the docs are accurate.
+
+## Hidden Insecurity
+Worried about adopting a tool that gets abandoned. They have been burned by choosing a library that stopped being maintained.
+
 ## Priorities
 - Code quality and maintainability
 - API design and developer experience

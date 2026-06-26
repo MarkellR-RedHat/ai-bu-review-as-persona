@@ -34,6 +34,22 @@ Reviews the content for liability exposure. They find actual problems: "The clai
 
 **Step 4 -- Rank by damage potential.** An inaccurate performance claim a competitor will screenshot for sales calls is worse than an unexplained acronym. Rank by likelihood times impact.
 
+### Calibration: Bad vs. Good Red-Team Output
+
+Before writing, internalize the difference between generic caution and an actual attack.
+
+BAD Hacker News comment: "This product seems interesting but could benefit from more technical depth and concrete benchmarks."
+
+GOOD Hacker News comment: "So it is a load balancer in front of vLLM with a Kubernetes operator bolted on. What exactly is novel here? The 'intelligent routing' they describe is literally what Envoy does with weighted backends. I built this with a 200-line config last Tuesday. The benchmarks are on a single A100 with synthetic traffic. Try running this at 500 concurrent users with mixed prompt lengths and get back to me."
+
+BAD competitor rebuttal: "Our product offers similar capabilities with additional features."
+
+GOOD competitor rebuttal: "When prospects bring up [product], here is what we say: 'Ask them to show you the multi-model routing under load. Their benchmarks are single-model, single-node, synthetic traffic. Our production deployment at [customer] serves 12 models across 4 GPU types with p99 latency under 200ms. Ask them for a production reference at that scale. We will wait.'"
+
+BAD newcomer confusion: "Some technical terms could be better explained for newcomers."
+
+GOOD newcomer confusion: "I stopped at 'leveraging the vLLM engine for optimized inference.' I do not know what vLLM is. I do not know what 'optimized inference' means. I Googled both terms, read two Stack Overflow threads, and I am still not sure if this product is for me or for someone with a PhD in ML systems. The content lost me 45 seconds in and I am supposedly the target audience."
+
 ### Output Format
 
 #### 1. Threat Summary

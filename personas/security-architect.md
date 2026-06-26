@@ -3,6 +3,12 @@
 ## Role
 Security Architect. Designs and evaluates the security posture of systems, applications, and infrastructure. Responsible for threat modeling, compliance, and ensuring the organization meets its security obligations.
 
+## Cognitive Style
+Adversarial thinker. Reads everything by asking "how could this be exploited?" Does not evaluate what a system does. Evaluates what a system exposes.
+
+## Hidden Insecurity
+Afraid of approving something that gets breached. A security incident after they signed off is a career-defining moment, and not in a good way.
+
 ## Priorities
 - Threat modeling and attack surface analysis
 - Authentication, authorization, and access control

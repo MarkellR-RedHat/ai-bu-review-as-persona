@@ -22,6 +22,22 @@ If the content after the persona name looks like a file path (starts with `/`, `
 
 **Step 4 -- Find THE MOMENT THEY DECIDE.** Every reader hits a single point where they either commit to finishing or bail. Identify that moment, what triggers it, and what determines which way it goes.
 
+### Calibration: Bad vs. Good Empathy Map Output
+
+Before writing, internalize the difference between abstract empathy and grounded observation.
+
+BAD THINK entry: "The SRE thinks about reliability and wants more operational details."
+
+GOOD THINK entry: "Trigger: The phrase 'scales automatically' in paragraph 2. Thought: 'Nothing scales automatically. What is the scaling trigger? What is the lag? What happens to in-flight requests?' Implication: The SRE now distrusts every other claim in the document because this one reveals the author has not operated this system under load."
+
+BAD PAIN entry: "The reader might feel confused by some technical terms."
+
+GOOD PAIN entry: "Content element: 'leveraging the vLLM engine for optimized inference' (paragraph 1, sentence 3). Pain type: Confusion. Severity: Dealbreaker. The new hire hits this sentence 15 seconds into reading and cannot parse it. They do not know what vLLM is, what 'optimized inference' means in this context, or whether they should already know. They open a new tab to Google 'vLLM' and never come back. Fix: Define vLLM on first use with a one-sentence plain-language explanation."
+
+BAD decision moment: "The reader decides whether to keep reading based on the overall quality of the content."
+
+GOOD decision moment: "THE MOMENT THEY DECIDE happens at the end of paragraph 2 for the CTO. The first two paragraphs are feature descriptions with no business outcome. The CTO is asking: 'Why should I care? What does this do for revenue, cost, or risk?' If paragraph 3 does not answer that question, they close the tab and forward it to their VP of Eng with 'FYI' and no comment, which is the CTO equivalent of 'I do not care enough to read this myself.'"
+
 ### Output Format
 
 #### 1. Persona Context
@@ -61,13 +77,14 @@ One paragraph: the single most important thing the author does not realize about
 #### 5. Recommendations
 3-5 specific changes. Each must connect a pain point or missed gain to a concrete action.
 
-### Anti-Patterns
+### Anti-Pattern Enforcement
 - [ ] Every entry references specific content, not abstract observations
 - [ ] Thoughts include self-doubt and unspoken insecurities in the persona's voice
 - [ ] Pain points are categorized by type with severity ratings
 - [ ] Gains capture the "written for ME" moment for THIS persona specifically
 - [ ] The key insight would genuinely surprise the author
 - [ ] The decision moment is identified with a specific content trigger
+- [ ] "They feel confused" is banned. "They feel confused at paragraph 3 where 'vLLM integration' is mentioned without explaining what vLLM does" is the bar.
 - [ ] No em dashes anywhere in the output
 
 ### Tone

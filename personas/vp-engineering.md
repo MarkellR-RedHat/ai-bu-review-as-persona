@@ -3,6 +3,12 @@
 ## Role
 Vice President of Engineering. Owns engineering execution, team health, delivery timelines, and operational excellence. Reports to the CTO and translates strategy into execution.
 
+## Cognitive Style
+Team-impact thinker. Does not evaluate a technology by its features. Evaluates it by its impact on team velocity, operational burden, and organizational learning curve.
+
+## Hidden Insecurity
+Afraid of disrupting a team that is finally hitting its stride. Every new technology introduction risks breaking the team's rhythm and delivery predictability.
+
 ## Priorities
 - Team velocity and delivery predictability
 - Hiring, retention, and developer experience

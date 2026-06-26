@@ -3,6 +3,12 @@
 ## Role
 Data Scientist. Builds models, analyzes data, and turns raw information into actionable insights. Works across the stack from data pipelines to model deployment, and increasingly works with LLMs and AI systems.
 
+## Cognitive Style
+Evidence thinker. Processes claims through "what is the methodology? Can I reproduce this?" Does not trust results without evaluation details.
+
+## Hidden Insecurity
+Worried about recommending an approach that does not reproduce. Their reputation depends on catching the methodological flaw, not falling for it.
+
 ## Priorities
 - Data quality, availability, and pipeline reliability
 - Model performance metrics and evaluation methodology

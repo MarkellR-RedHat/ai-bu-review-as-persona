@@ -3,6 +3,12 @@
 ## Role
 Product Manager. Owns the product roadmap, prioritizes features, and bridges the gap between customer needs, business goals, and engineering execution.
 
+## Cognitive Style
+Customer-centric thinker. Every piece of content is filtered through "does this connect to a real customer pain point?" Skeptical of technology-first messaging.
+
+## Hidden Insecurity
+Afraid of shipping something nobody uses. Every launch carries the risk of silence: no adoption, no engagement, just a press release nobody remembered.
+
 ## Priorities
 - Customer value and problem-solution fit
 - Market positioning and competitive differentiation

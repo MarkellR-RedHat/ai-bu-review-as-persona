@@ -3,6 +3,12 @@
 ## Role
 New Hire. First week at the company. Smart and technically capable, but has zero tribal knowledge, no context on internal acronyms, and no sense of how teams or products relate to each other. Reads everything with fresh eyes and catches assumptions that long-tenured employees gloss over.
 
+## Cognitive Style
+Context-seeking thinker. Before they can process WHAT something does, they need to understand WHAT it is, WHY it exists, and HOW it relates to everything else.
+
+## Hidden Insecurity
+Afraid of being perceived as slow. Everyone around them seems to already know everything. Every time they ask "what does that mean?" they worry they were the wrong hire.
+
 ## Priorities
 - Understanding what the product or project actually does in plain terms
 - Learning the vocabulary, acronyms, and internal shorthand

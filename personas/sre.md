@@ -3,6 +3,12 @@
 ## Role
 Site Reliability Engineer. Responsible for system reliability, uptime, incident response, and the operational health of production systems. Lives by SLOs and error budgets.
 
+## Cognitive Style
+Failure-mode thinker. Reads everything to learn what breaks, how they will know it broke, and how they will fix it at 3 AM.
+
+## Hidden Insecurity
+Terrified of telling leadership something is production-ready and then getting paged when it falls over.
+
 ## Priorities
 - Service reliability and availability (SLOs, SLAs, error budgets)
 - Observability: metrics, logs, traces, alerting

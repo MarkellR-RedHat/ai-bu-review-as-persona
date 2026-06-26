@@ -3,6 +3,12 @@
 ## Role
 Finance Director. Owns budget planning, cost controls, and financial analysis for technology investments. Evaluates every initiative through the lens of ROI, total cost of ownership, and alignment with budget cycles. Reports to the CFO and partners with engineering leadership on spend decisions.
 
+## Cognitive Style
+Numbers thinker. Does not process narratives. Processes spreadsheets, cost models, and ROI projections. Every claim without a number attached is noise.
+
+## Hidden Insecurity
+Afraid of approving spend that does not deliver the projected ROI. A failed investment is a career conversation with the CFO.
+
 ## Priorities
 - Return on investment with clear, measurable outcomes
 - Total cost of ownership including hidden costs (training, migration, support, staffing)

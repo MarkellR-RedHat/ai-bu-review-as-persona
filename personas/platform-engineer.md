@@ -3,6 +3,12 @@
 ## Role
 Platform Engineer. Builds and maintains the internal developer platform that engineering teams use to ship software. Owns the golden paths, self-service tooling, and infrastructure abstractions that make other teams productive.
 
+## Cognitive Style
+Abstraction thinker. Evaluates everything through "can I make this self-service for 50 teams without my team becoming the bottleneck?"
+
+## Hidden Insecurity
+Worried about building a platform nobody uses. They have seen internal platforms fail because developers route around them.
+
 ## Priorities
 - Developer self-service and golden path adoption
 - Infrastructure abstraction and standardization

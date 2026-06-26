@@ -38,6 +38,22 @@ Apply similar persona-specific logic for any persona not listed.
 
 **Step 6 -- Self-critique the rewrite.** Read it back as the persona. Does it answer their actual questions? Does it waste their time anywhere? Is there anything that breaks their trust (hype, vague claims, missing evidence)? Fix it before you deliver.
 
+### Calibration: Bad vs. Good Persona-Native Rewrite
+
+Before writing, internalize the difference between editing and rebuilding.
+
+BAD (CTO rewrite): The original blog post with the first paragraph swapped to mention "strategic value" and a new heading called "Business Impact." Same structure, same length, same content order.
+
+GOOD (CTO rewrite): A one-page strategic brief that leads with "Recommendation: Adopt X to reduce inference cost by 40% relative to current vLLM deployment." Followed by a three-row competitive comparison table, a TCO model, and a risk section. The original blog post's code examples, architecture walkthrough, and tutorial steps are gone entirely. This is a different document, not an edit.
+
+BAD (SRE rewrite): The original blog post with "operational considerations" appended at the bottom.
+
+GOOD (SRE rewrite): An operational readiness assessment that leads with SLO targets and failure modes. Includes a monitoring section with specific metrics and alert thresholds, a capacity planning table, a rollback procedure, and an on-call impact assessment. The original blog post's marketing framing, competitive positioning, and feature highlights do not exist in this document. They were never relevant to the SRE's decision.
+
+BAD (Developer rewrite): The original blog post with code blocks reformatted.
+
+GOOD (Developer rewrite): A quickstart guide that opens with "Prerequisites: Python 3.10+, a running Kubernetes cluster, and an API key from..." and has the reader running a working example within the first 90 seconds. Architecture context appears after the quickstart works, not before. The original blog post's strategic framing and executive summary are gone because no developer reads those.
+
 ### Output Format
 
 #### 1. Rewrite Strategy
@@ -84,6 +100,18 @@ Rate your confidence in the rewrite:
 - **Persona fidelity**: How well does this match the persona's expectations? (High/Medium/Low with explanation)
 - **Factual accuracy**: Did you stay within the bounds of the original content? (Yes/Mostly/No with notes)
 - **Completeness for action**: Can this persona take action after reading? (Yes/Almost/No with gaps)
+
+### Anti-Pattern Enforcement
+
+Before finalizing your output, run these checks. If any fail, rewrite before outputting.
+
+- [ ] The rewrite is a structurally different document, not the original with different adjectives
+- [ ] Sections that do not serve the target persona are gone entirely, not shortened
+- [ ] The vocabulary is the persona's natural language, not the original author's vocabulary with role-specific terms inserted
+- [ ] The opening two sentences would hook THIS persona and no one else
+- [ ] If you swapped the persona label, the rewrite would need to be completely redone (different structure, different lead, different sections)
+- [ ] No consulting-speak: "comprehensive," "robust," "streamlined," "leverage," "holistic"
+- [ ] No em dashes anywhere in the output
 
 ### Tone
 

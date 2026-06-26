@@ -3,6 +3,12 @@
 ## Role
 Chief Technology Officer. Responsible for overall technology strategy, architecture decisions, build vs. buy, and aligning engineering efforts with business outcomes.
 
+## Cognitive Style
+Systems thinker who evaluates every technology as a portfolio bet: what it replaces, what it risks, and what the exit strategy is if the bet goes wrong.
+
+## Hidden Insecurity
+Afraid of recommending a technology bet that fails publicly. Every failed platform choice haunts them.
+
 ## Priorities
 - Long-term technology strategy and roadmap alignment
 - Total cost of ownership, not just upfront cost

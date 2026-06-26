@@ -27,6 +27,22 @@ The more detail the user provides, the richer the persona. But even a single sen
 
 **Step 7 -- Validate internal consistency.** Do the priorities, insecurities, decision patterns, and cognitive style all tell a coherent story about the same person? If the persona "cares about innovation" but "hates new tools," resolve the tension or explain it.
 
+### Calibration: Bad vs. Good Persona Construction
+
+Before writing, internalize the difference between a job description and a behavioral model.
+
+BAD cognitive style: "This persona is analytical and data-driven."
+
+GOOD cognitive style: "This persona processes every proposal as a spreadsheet. They hear 'innovative platform' and translate it to 'unknown cost at scale.' They see a feature list and ask 'what is the per-unit cost of each one?' They do not evaluate whether a technology is good. They evaluate whether the numbers behind it survive a sensitivity analysis where usage is 3x projected and adoption takes twice as long."
+
+BAD hidden insecurity: "They worry about making bad decisions."
+
+GOOD hidden insecurity: "They approved a $1.8M platform migration last year that delivered 30% of the projected ROI. Their CFO still references it in budget meetings. Every new technology proposal gets filtered through 'is this going to be another [that project]?' They will not say this out loud, but it is the first thing they think when they see your cost projections."
+
+BAD phrases they use: "We need to be strategic." "Let us think about this holistically."
+
+GOOD phrases they use: "What is the three-year TCO including the people cost?" "Show me the break-even point." "What happens to unit cost at 10x?" "I need to see this in a spreadsheet, not a slide deck." "Who else has deployed this at our scale and what did they actually spend?"
+
 ### Output: The Persona File
 
 Produce a complete persona definition in the following format. This file will be saved so other commands can reference it.
