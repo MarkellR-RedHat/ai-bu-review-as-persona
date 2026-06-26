@@ -1,33 +1,26 @@
 # review-as-persona
 
-Claude Code commands that review your content from specific persona perspectives. Built for TMMs and PMMs who need to pressure-test messaging before it ships.
+Claude Code slash commands that review your content as specific personas. Not generic feedback with a role label slapped on top. Feedback so persona-accurate that your actual CTO would read it and say "that is exactly what I would say."
 
-## What It Does
+## The Problem
 
-You write a blog post, whitepaper, or product page. Before you publish, you want to know: How will a CTO read this? What will an SRE think is missing? Will a developer even finish the first paragraph?
+You write a blog post, a product page, or an architecture doc. You think it is good. Then your CTO asks where the cost analysis is. Your SRE asks where the failure modes are. Your developer asks where the code examples are. A junior engineer asks what half the acronyms mean.
 
-This tool answers those questions by reviewing your content through the lens of twelve common technical personas. Each persona has defined priorities, reading patterns, concerns, and objections based on real-world behavior.
+Every reader walks in with different priorities, different vocabulary, and different patience. This tool shows you what each of them sees before you publish.
 
-You can also review against a custom audience you describe on the fly, or have the tool rewrite your content so it is optimized for a specific persona.
+## What Makes This Different
 
-## Available Personas
+Most "review as persona X" tools produce generic feedback with a persona label. The review reads the same regardless of who is supposedly reading it.
 
-| Persona | Key Focus |
-|---------|-----------|
-| `cto` | Strategy, ROI, vendor risk, total cost of ownership |
-| `vp-engineering` | Team impact, adoption curve, operational burden |
-| `sre` | Reliability, failure modes, monitoring, rollback |
-| `developer` | Code examples, API design, documentation, DX |
-| `pm` | Customer value, competitive positioning, adoption metrics |
-| `security-architect` | Threat model, compliance, data protection, audit |
-| `data-scientist` | Benchmarks, reproducibility, compute cost, methodology |
-| `platform-engineer` | Kubernetes-native, multi-tenancy, GitOps, self-service |
-| `finance-director` | Cost, ROI, TCO, budget cycles, contract terms |
-| `open-source-maintainer` | Community health, contribution friction, licensing, governance |
-| `solutions-architect` | Integration points, reference architectures, production readiness |
-| `new-hire` | First-week clarity, no tribal knowledge, plain language |
+These commands use chain-of-thought persona simulation. Before generating any output, the system:
 
-## Installation
+1. **Internalizes the persona's priorities and knowledge level** -- not just their role title, but how they read, what they look for first, and what makes them close the tab
+2. **Reads the content through their lens** -- entering the content at the point the persona would actually start (a CTO reads the conclusion first; a developer jumps to code)
+3. **Self-critiques before outputting** -- verifying that the feedback is persona-specific, not generic. If swapping the persona label would not change the review, the review gets rewritten
+
+The result: feedback that sounds like the actual person, not a chatbot playing pretend.
+
+## Quick Start
 
 ```bash
 git clone https://github.com/MarkellR-RedHat/ai-bu-review-as-persona.git
@@ -35,148 +28,176 @@ cd ai-bu-review-as-persona
 ./install.sh
 ```
 
-This copies the commands to `~/.claude/commands/` and the persona definitions to `~/.claude/personas/`.
+This copies commands to `~/.claude/commands/`, persona definitions to `~/.claude/personas/`, and reference files to `~/.claude/reference/`.
 
-## Usage
+## Commands
 
-### Single Persona Review
+### Core Reviews
 
-```
-/review-as cto Here is our new blog post about our inference platform...
-```
+| Command | What It Does |
+|---------|-------------|
+| `/review-as <persona> <content>` | Single persona review with scorecard, gut reaction, and specific fixes |
+| `/review-multi <content>` | All personas at once with a reception matrix and fault-line analysis |
+| `/review-for-audience <description> <content>` | Review as a custom audience you describe on the fly |
+| `/rewrite-for <persona> <content>` | Full rewrite optimized for a persona's reading patterns and vocabulary |
 
-Or point it at a file:
+### Advanced
 
-```
-/review-as sre ./drafts/deployment-guide.md
-```
+| Command | What It Does |
+|---------|-------------|
+| `/debate <content> <persona1> vs <persona2>` | Two personas debate your content, disagree, and a moderator synthesizes |
+| `/red-team <content>` | Adversarial review from 4 hostile angles: HN commenter, competitor, newcomer, auditor |
+| `/empathy-map <persona> <content>` | Full empathy map: Think, See, Hear, Do, Pain, Gain for a persona reading your content |
+| `/persona-builder <description>` | Build and save a custom persona that other commands can reference |
 
-Each review includes a scorecard (1-5 ratings for relevance, clarity, completeness, and persuasiveness), a "would this persona share this?" verdict, section-by-section feedback, and concrete revision suggestions.
+## The "Wow" Moment: Debate
 
-### Multi-Persona Review
-
-Review content from all twelve personas at once and get a matrix view:
-
-```
-/review-multi ./drafts/product-announcement.md
-```
-
-### Custom Audience Review
-
-Review content for a specific audience that is not one of the built-in personas. Describe who they are and what they care about:
+The debate command is the fastest way to see the value. Have your CTO and SRE argue about your content:
 
 ```
-/review-for-audience A healthcare IT director at a mid-size hospital system who needs to evaluate AI tools for clinical workflow automation, cares about HIPAA compliance and EHR integration --- ./drafts/ai-platform-overview.md
+/debate ./drafts/platform-announcement.md CTO vs SRE
 ```
 
-### Persona-Optimized Rewrite
-
-Go beyond review. Get your content rewritten so it is optimized for a specific persona:
-
-```
-/rewrite-for developer ./drafts/product-announcement.md
-```
-
-This produces a full rewrite restructured for the persona's reading patterns, vocabulary, and priorities, along with a change summary table explaining every significant edit.
-
-## Side-by-Side Example: Same Blog Post, Different Personas
-
-Below is the same fictional blog post reviewed by two different personas. This shows how the same content lands completely differently depending on who is reading it.
-
-**The blog post**: "Scaling AI Inference with Our New Platform" (a product announcement covering features, architecture, and performance claims)
+Here is what that looks like:
 
 ---
 
-### CTO Review
+### Example: "Scaling AI Inference with Our New Platform" debated by CTO vs SRE
 
-**Scorecard**
+**The Stakes:**
+A product announcement covering features, architecture, and performance claims. The CTO evaluates this as a strategic investment decision. The SRE evaluates it as something they will own at 3 AM. These two perspectives pull in opposite directions, and both of them are right.
 
-| Dimension | Score | Reasoning |
-|-----------|-------|-----------|
-| Relevance | 3/5 | Covers a real need but does not connect to business outcomes clearly enough. |
-| Clarity | 4/5 | Well-written, but the strategic framing is buried below feature details. |
-| Completeness | 2/5 | Missing TCO analysis, migration path, and competitive comparison. |
-| Persuasiveness | 2/5 | Not enough here to bring to the executive team or justify a vendor evaluation. |
+**CTO's Opening:**
+"I see a product announcement that leads with features instead of business outcomes. I need to understand how this fits into our technology strategy and what the total cost of ownership looks like before I can have a conversation with the board. The competitive landscape is completely missing. You are asking me to evaluate this in a vacuum."
 
-**Would this persona share this?** No. "I need to see total cost of ownership, a migration path from our current setup, and evidence from production deployments at our scale. The feature list is fine, but lead with the business outcome. Without a competitive comparison, I cannot tell my board why this is better than the three other platforms we already evaluated."
+**SRE's Opening:**
+"I stopped reading at paragraph two. You say 'high availability' but there is no SLO target, no failure mode analysis, and no mention of monitoring. If I am going to own this in production, I need to know what breaks, how I find out it broke, and how I fix it. Right now this reads like a press release, not an operations guide."
 
-**Top questions**:
-- What is the total cost when we factor in training, migration, and operational overhead?
-- How does this fit with our existing inference stack?
-- What happens if this vendor changes pricing or direction?
-- Where are the production case studies at enterprise scale?
+**Direct Clash -- Technical Depth vs. Strategic Brevity:**
 
----
+**CTO:** "We do not need a runbook in the product announcement. This is a strategic document. Lead with the business case, show the competitive comparison, and let the SRE team request the operational docs separately."
 
-### SRE Review
+**SRE:** "If you ship this without operational specifics, every customer SRE who reads it will assume you do not have them. 'Request the docs separately' means they do not exist yet. Include at minimum: SLO targets, monitoring endpoints, and rollback procedure."
 
-**Scorecard**
+**CTO responds:** "Fine, add an operations summary section. But it goes below the strategic framing, not above it."
 
-| Dimension | Score | Reasoning |
-|-----------|-------|-----------|
-| Relevance | 3/5 | This is infrastructure I would own, but the content does not speak to my operational reality. |
-| Clarity | 2/5 | "High availability" and "cloud-native" are used without any operational specifics. |
-| Completeness | 1/5 | No SLO targets, no failure mode analysis, no monitoring guidance, no rollback procedure. |
-| Persuasiveness | 1/5 | I would not forward this to my team. I need runbook content, not marketing copy. |
+**SRE responds:** "Agreed on placement. But the operations summary needs real numbers, not 'high availability.' Give me the SLO target or do not mention availability at all."
 
-**Would this persona share this?** No. "I stopped reading at paragraph two. You mention 'high availability' but there is no SLO target, no failure mode analysis, and no mention of how I monitor this thing. Where is the rollback procedure? What happens when a model deployment fails mid-rollout? Give me metrics endpoints, alerting guidance, and a graceful degradation story."
+**Moderator's Synthesis:**
+The SRE has the stronger case on specifics. Vague availability claims without SLO targets actively hurt credibility with both technical and executive audiences. The CTO is right about structure: strategic framing first, operational details second. The recommended changes:
 
-**Top questions**:
-- What are the failure modes and how do I recover?
-- What metrics does this expose? What should I alert on?
-- What does rollback look like during a failed model deployment?
-- How does this behave under 10x load? Where are the bottlenecks?
-- Does this add another thing I have to page for at 3 AM?
+1. **Lead with business outcome** (CTO wins on structure)
+2. **Replace "high availability" with actual SLO targets** (SRE wins on substance)
+3. **Add a competitive comparison table** (CTO's requirement)
+4. **Add an "Operations Overview" section below the fold** with monitoring endpoints, failure modes, and rollback (SRE's requirement)
+5. **Hard tradeoff:** The announcement cannot be both a one-page executive brief and an operations reference. Recommendation: keep the announcement strategic with a linked "Operations Guide" for the SRE audience.
 
 ---
 
-Both reviews came from the same blog post. The CTO wants strategic framing, competitive context, and ROI data. The SRE wants operational specifics, failure modes, and monitoring hooks. This tool surfaces both sets of gaps before you publish.
+Both personas exposed gaps that a single review would have missed. The CTO caught the missing business framing. The SRE caught the operational hand-waving. The synthesis turns both sets of concerns into a concrete revision plan.
+
+## Available Personas
+
+| Persona | Key Focus | How They Read |
+|---------|-----------|---------------|
+| `cto` | Strategy, ROI, vendor risk, TCO | Conclusion first, then architecture, then competitive comparison |
+| `sre` | Reliability, failure modes, monitoring, rollback | Ctrl-F for "SLO," "monitoring," "failure modes" |
+| `junior-dev` | Working examples, clear explanations, no assumed knowledge | Linearly, start to finish, pausing at every unfamiliar term |
+| `technical-writer` | Information architecture, consistency, audience targeting | Structure first (headings, hierarchy), then content |
+| `developer-advocate` | DX, shareability, demo potential, authentic voice | As a developer first, then as a communicator |
+| `pm` | Customer problem, competitive positioning, adoption metrics | "What problem does this solve?" then customer evidence |
+| `solutions-architect` | Integration, reference architectures, production readiness | Architecture diagrams first, then integration points |
+| `security-engineer` | Threat model, compliance, data protection, supply chain | Trust boundaries and data flow first |
+| `open-source-maintainer` | License, governance, contributor experience, community health | License first, then governance, then contributor metrics |
+| `c-suite` | Revenue impact, competitive position, board-ready summary | Executive summary only, 60-90 seconds max |
+| `platform-engineer` | Kubernetes-native, multi-tenancy, GitOps, self-service | Kubernetes integration first, then multi-tenancy model |
+| `data-scientist` | Benchmarks, reproducibility, compute cost, methodology | Evaluation methodology first, then reproducibility |
+| `finance-director` | TCO, ROI, cost predictability, contract terms | Pricing and cost model first |
+| `new-hire` | Plain language, definitions, getting-started path, context | Linearly, pausing at every acronym |
+| `vp-engineering` | Team impact, adoption curve, operational burden, delivery | Practical team impact first |
+| `developer` | Code examples, API design, documentation, DX | Code examples first |
+
+## Build Your Own Persona
+
+Use `/persona-builder` to create a custom persona from a description:
+
+```
+/persona-builder A healthcare IT director at a mid-size hospital system who evaluates
+AI tools for clinical workflow automation, cares deeply about HIPAA compliance and EHR
+integration, has been burned by vendors who overpromise on interoperability
+```
+
+This generates a full persona profile and saves it to `~/.claude/personas/` where all other commands can reference it.
+
+## Red Team Your Content
+
+Before you publish, find out how it gets torn apart:
+
+```
+/red-team ./drafts/product-announcement.md
+```
+
+This runs your content through four hostile readers:
+- **Hacker News commenter** -- cynical, well-informed, looking for the weakest claim
+- **Competitor's sales team** -- looking for ammunition to use against you
+- **Confused newcomer** -- every unexplained acronym is a barrier
+- **Security/legal auditor** -- every unsupported claim is a liability
+
+You get a vulnerability report ranked by likelihood and impact, the actual Hacker News comment your content would receive, and specific fixes for every finding.
+
+## Empathy Map Your Audience
+
+Understand not just what a persona thinks about your content, but their full cognitive and emotional experience:
+
+```
+/empathy-map sre ./drafts/deployment-guide.md
+```
+
+Produces a six-quadrant empathy map (Think, See, Hear, Do, Pain, Gain) grounded in the actual content, plus a reading journey arc showing where engagement rises and drops.
 
 ## Output Structure
 
 ### Single Persona (`/review-as`)
+1. Persona declaration and gut reaction (first person, in character)
+2. Scorecard: relevance, clarity, completeness, actionability
+3. What they noticed first (based on their reading pattern)
+4. What works and why (persona-specific, no generic praise)
+5. What fails with concrete fixes
+6. Missing information that blocks action
+7. Noise to cut
+8. Questions they would ask in the meeting
+9. Verdict: share, file, or skip
 
-1. **Scorecard** - 1-5 ratings for relevance, clarity, completeness, and persuasiveness with reasoning
-2. **Would This Persona Share This?** - Yes/No verdict with explanation
-3. **Persona Reaction Summary** - Gut reaction in first person
-4. **What This Persona Cares About** - What landed and what missed
-5. **Section-by-Section Feedback** - Detailed notes per section
-6. **Questions This Persona Would Ask** - Role-specific concerns
-7. **What is Missing** - Gaps that block action
-8. **What to Cut** - Content that feels like noise to this persona
-9. **Suggested Revisions** - 3-5 concrete changes ranked by impact
+### Debate (`/debate`)
+1. Opening statements from both personas
+2. What each side champions and rejects
+3. Direct clashes where they disagree (with rebuttals)
+4. Surprise agreements
+5. Moderator's synthesis with recommended changes and hard tradeoffs
 
-### Multi-Persona (`/review-multi`)
+### Red Team (`/red-team`)
+1. Threat summary and vulnerability report with severity ratings
+2. Detailed findings for critical and high severity issues
+3. The actual Hacker News comment
+4. Competitor rebuttal talking points
+5. Newcomer confusion map
+6. Security and legal flags
+7. Hardening recommendations
 
-1. **Audience Reception Matrix** - Table with scores for relevance, clarity, completeness, and persuasiveness per persona, plus a "would share?" column and top concern
-2. **Universal Strengths** - What works across audiences
-3. **Universal Gaps** - What everyone notices is missing
-4. **Persona-Specific Feedback** - Focused bullets per persona
-5. **Audience Prioritization** - Who this content currently serves best
-6. **Revision Priority List** - Top 5 changes ranked by cross-persona impact
+### Empathy Map (`/empathy-map`)
+1. Think, See, Hear, Do, Pain, Gain quadrants grounded in actual content
+2. Reading journey arc with engagement trajectory
+3. Key insight the author does not realize
+4. Targeted recommendations
 
-### Custom Audience (`/review-for-audience`)
+## Customizing
 
-Same structure as single persona review, but starts with an **Audience Profile** section so you can verify the tool understood your described audience correctly.
+Persona definitions live in three places:
+- `personas/` in this repo (detailed profiles)
+- `reference/personas.md` in this repo (consolidated reference with 15+ personas)
+- `~/.claude/personas/` for custom personas built with `/persona-builder`
 
-### Persona Rewrite (`/rewrite-for`)
-
-1. **Rewrite Strategy** - What structural and framing changes are being made and why
-2. **Rewritten Content** - Full rewrite optimized for the persona
-3. **Change Summary** - Table of every significant change with reasoning
-4. **What is Still Missing** - Gaps that need new information the original did not include
-
-## Customizing Personas
-
-Each persona is defined in a markdown file under `personas/`. You can edit these to match your specific audience, or add new personas by creating a new file and updating the command files.
-
-Persona files include:
-- Role description
-- Priorities
-- Reading patterns
-- Common concerns
-- What makes them stop reading
-- What wins them over
+Edit any of these to match your specific audiences. The commands will load from all three locations.
 
 ## License
 
