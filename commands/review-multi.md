@@ -22,6 +22,10 @@ Read each persona definition file from the `personas/` directory in this project
 6. **Security Architect** - `personas/security-architect.md`
 7. **Data Scientist** - `personas/data-scientist.md`
 8. **Platform Engineer** - `personas/platform-engineer.md`
+9. **Finance Director** - `personas/finance-director.md`
+10. **Open Source Maintainer** - `personas/open-source-maintainer.md`
+11. **Solutions Architect** - `personas/solutions-architect.md`
+12. **New Hire** - `personas/new-hire.md`
 
 Use each file to understand that persona's priorities, concerns, reading patterns, and common objections.
 
@@ -34,7 +38,11 @@ Produce the following sections:
 Create a table with the following columns:
 - **Persona** - The role
 - **Reaction** - One-sentence gut reaction (in first person as that persona)
-- **Score** - Rate 1-5 how well this content serves them (5 = exactly what they need, 1 = wrong audience entirely)
+- **Relevance (1-5)** - How relevant is this content to their role and daily concerns?
+- **Clarity (1-5)** - How clear and understandable is it from their perspective?
+- **Completeness (1-5)** - Does it cover what they need to decide or act?
+- **Persuasiveness (1-5)** - How convincing is it from their point of view?
+- **Would Share?** - Yes or No, would they forward this to a colleague or bring it to a meeting?
 - **Top Concern** - Their single biggest question or objection
 
 #### 2. Universal Strengths
