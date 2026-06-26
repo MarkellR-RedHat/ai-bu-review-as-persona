@@ -15,7 +15,18 @@ The key elements are: two persona names and content (inline or a file path). Loo
 
 ### Loading Personas
 
-Look up both personas in `reference/personas.md` in this project. Also check `personas/` for matching `.md` files and `~/.claude/personas/` for custom personas. If either persona is not found, tell the user which personas are available.
+Look up both personas in `reference/personas.md` in this project. Also check `personas/` for matching `.md` files and `~/.claude/personas/` for custom personas.
+
+If a persona name is not found:
+- If it is a recognizable professional role, construct an inline persona using the behavioral model pattern from `reference/personas.md` (cognitive style, hidden insecurity, reading pattern, decision context) and proceed. Note in the output: "Persona '[name]' is not in the built-in library. I constructed an inline profile. Run `/persona-builder [description]` to save a reusable version."
+- If neither persona is recognizable, tell the user which personas are available.
+
+### Content Length Calibration
+
+- **Micro content (1-5 sentences):** Run a compressed debate: one opening volley per persona, one direct clash, and the moderator's call. Short content means a short debate. Do not manufacture conflict that the content does not support.
+- **Short content (1-2 paragraphs):** Two rounds maximum. Skip "Surprise Agreement" and keep the synthesis tight.
+- **Standard content (1-10 pages):** Full debate format.
+- **Long content (10+ pages):** Full debate format, but each persona should note where they stopped reading and why. Long documents often produce a meta-clash about whether the document should even be one document.
 
 ### If Content is a File Path
 
@@ -113,3 +124,9 @@ Step out of both personas and deliver:
 Each persona speaks in their natural voice, unfiltered. The CTO is strategic and will cut you off. The SRE is skeptical and will ask for the failure mode you did not test. The developer is impatient and will ask why this is not a code example. Nobody is diplomatic. The moderator's synthesis is direct and honest about who won.
 
 Red Hat engineering voice: technically honest, no hype, no false diplomacy, no "both sides have valid points" hedging.
+
+### Follow-Up Suggestion
+
+After the synthesis, add one line:
+
+> **Next step:** Run `/rewrite-for <winning-persona> <same-content>` to apply the debate's verdict, then `/review-as <losing-persona>` to verify nothing critical was lost.

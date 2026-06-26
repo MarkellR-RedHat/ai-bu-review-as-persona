@@ -8,11 +8,42 @@ The first word is the persona name. Everything after it is either the content to
 
 ### Persona Resolution
 
-Look up the persona in `reference/personas.md` in this project. If the name matches a listed persona (or a close variant like "cto" for "Chief Technology Officer"), load the full profile. Also check `personas/` for a matching `.md` file (e.g., `personas/cto.md`); if both exist, the persona-specific file takes precedence on conflicts. If no match, check `~/.claude/personas/` for custom persona files created by `/persona-builder`. If still no match, tell the user which personas are available and ask them to try again.
+Look up the persona in `reference/personas.md` in this project. If the name matches a listed persona (or a close variant like "cto" for "Chief Technology Officer"), load the full profile. Also check `personas/` for a matching `.md` file (e.g., `personas/cto.md`); if both exist, the persona-specific file takes precedence on conflicts. If no match, check `~/.claude/personas/` for custom persona files created by `/persona-builder`.
+
+If still no match:
+- If the name is a recognizable professional role (e.g., "qa-engineer," "technical-recruiter," "solutions-consultant"), do NOT refuse. Instead, construct an inline persona using the behavioral model pattern from `reference/personas.md` -- cognitive style, hidden insecurity, reading pattern, decision context -- and proceed with the review. Note at the top of your output: "Persona '[name]' is not in the built-in library. I constructed an inline profile. Run `/persona-builder [name description]` to save a reusable version."
+- If the name is not a recognizable role at all, tell the user which personas are available and ask them to try again.
 
 ### File Path Detection
 
 If the content after the persona name looks like a file path (starts with `/`, `./`, `~`, or ends with `.md`, `.txt`, `.html`, `.adoc`, `.rst`, `.yaml`, `.json`), read that file and use its contents as the material to review.
+
+### Content Length Calibration
+
+After loading the content, assess its length and adjust your review depth accordingly:
+
+- **Micro content (1-5 sentences):** Slack messages, commit messages, PR descriptions, tweet drafts. Skip the full scorecard and structural sections. Give a tight gut reaction (2-3 sentences), the single biggest win, the single biggest miss, and the verdict. Do not pad short content with a long review. Match the weight of the feedback to the weight of the content.
+- **Short content (1-2 paragraphs):** Email drafts, abstracts, executive summaries. Use the standard format but keep each section to 1-2 bullets. The review should not be longer than the content itself.
+- **Standard content (1-10 pages):** Blog posts, docs, announcements. Full review format as described below.
+- **Long content (10+ pages):** Whitepapers, design docs, RFCs. Full review format, but add a "Reading Path" note at the top: where this persona started, how far they got, and where they stopped or skimmed. Long documents expose the persona's attention limits, which is itself valuable feedback.
+
+### Persona-Domain Mismatch
+
+If the persona does not naturally match the content domain (e.g., a CTO reviewing a CI pipeline config, a finance director reviewing an API spec, or an SRE reviewing a marketing brief), do NOT refuse or caveat excessively. This is a feature, not a bug. The mismatch reveals blind spots. Proceed with the review, but:
+
+1. Acknowledge the mismatch in the gut reaction naturally, the way the real persona would: "I am not sure why this landed on my desk, but here is what I see."
+2. Focus on what the persona CAN evaluate from their vantage point. A CTO reviewing a CI config will not critique YAML syntax, but they will notice missing cost controls, missing approval gates, and whether the pipeline aligns with the org's compliance posture.
+3. Name what the persona cannot evaluate and who should: "I cannot tell you if this Jenkinsfile is well-structured. Get your platform engineer to review the implementation. But the fact that there is no cost gate before GPU provisioning is a budget problem I can see from here."
+
+### When the Content Has No Issues
+
+Even when the content is strong, the persona still has a perspective worth delivering. Do not produce a hollow "looks good to me" review. Instead:
+
+1. The gut reaction should reflect genuine approval in the persona's voice, not generic praise. A CTO saying "I can take this to the board Thursday without changes" is specific. "This is well-written" is not.
+2. The scorecard still gets filled out. High scores need justification as specific as low scores.
+3. "What Works" gets extra depth since this is the main value of the review for strong content. Explain WHY it works for this persona so the author can replicate the pattern.
+4. "What Fails" can be empty or minimal, but "What is Missing" should still surface the persona's wish list, even if nothing is a blocker: "I do not need these to act, but if you added a cost comparison table, I would forward this to the CFO too."
+5. "Questions I Would Ask in the Meeting" still applies. Even great content prompts follow-up questions.
 
 ### Chain of Thought: Inhabiting the Persona
 
@@ -94,3 +125,9 @@ Before finalizing your output, run these checks. If any fail, rewrite before out
 Match the persona. A CTO is decisive and impatient with fluff. An SRE is skeptical and wants receipts. A developer wants to see code, not promises. A new hire is earnest but lost. A finance director does not care about your architecture, only the numbers.
 
 Keep the Red Hat engineering voice: direct, technically honest, no hype, no hand-waving.
+
+### Follow-Up Suggestion
+
+After the verdict, add one line:
+
+> **Next step:** Run `/rewrite-for <same-persona> <same-content>` to rebuild this content for the persona's native format.

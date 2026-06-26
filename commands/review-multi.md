@@ -10,6 +10,15 @@ The arguments are either the content to review directly or a file path to read. 
 
 If the input looks like a file path (starts with `/`, `./`, `~`, or ends with a common file extension like `.md`, `.txt`, `.html`, `.adoc`, `.rst`), read that file and use its contents as the material to review.
 
+### Content Length Calibration
+
+Assess the content length and adjust scope:
+
+- **Micro content (1-5 sentences):** Use a reduced persona set (4-5 most relevant personas, not all 16). Produce a compact reception matrix and one fault line. A 2-sentence Slack message does not need a 16-persona deep dive.
+- **Short content (1-2 paragraphs):** Use 6-8 personas. Compact matrix, 1-2 fault lines, skip the Persona-Specific Quick Hits section.
+- **Standard content (1-10 pages):** Full analysis with all personas.
+- **Long content (10+ pages):** Full analysis, but add a "Reading Depth" column to the matrix noting how far each persona actually read before deciding. Most CTOs and C-suite executives will not finish a 15-page doc, and that is a finding.
+
 ### Loading Personas
 
 Load persona definitions from `reference/personas.md` in this project. Also load any matching files from the `personas/` directory for additional depth.
@@ -110,3 +119,9 @@ Rank the top 5 changes by how many personas they serve. For each:
 Direct and analytical. This is a strategic tool for content teams making hard choices about audience. Do not soften the verdict. Tell the author who they are reaching, who they are missing, and force a decision about who matters most. If the content tries to serve everyone, say that it serves no one well.
 
 Red Hat engineering voice: technically honest, direct, no hype.
+
+### Follow-Up Suggestion
+
+After the Revision Priority Stack, add one line:
+
+> **Next step:** Run `/rewrite-for <highest-priority-persona> <same-content>` to rebuild this content for the audience that matters most.
