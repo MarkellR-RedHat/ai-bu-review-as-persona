@@ -17,6 +17,15 @@ Look for a clear separator between the audience description and the content. Com
 
 If the content portion looks like a file path, read that file and use its contents as the material to review.
 
+### Content Length Calibration
+
+After loading the content, assess its length and adjust your review depth:
+
+- **Micro content (1-5 sentences):** Slack messages, tweet drafts, taglines. Skip the full scorecard. Present the constructed persona profile, then deliver a tight gut reaction (2-3 sentences), the single biggest win, the single biggest miss, and the verdict. Do not pad short content with a long review.
+- **Short content (1-2 paragraphs):** Email drafts, abstracts. Use the standard format but keep each section to 1-2 bullets. The review should not be longer than the content itself.
+- **Standard content (1-10 pages):** Full review format as described below.
+- **Long content (10+ pages):** Full format, but add a "Reading Path" note after the constructed persona: where this persona started, how far they got, and where they stopped or started skimming. Attention drop-off in long content is itself a key finding.
+
 ### Chain of Thought: Building and Becoming the Persona
 
 **Step 1 -- Construct the full persona profile.** From the user's description, build out:
@@ -114,3 +123,9 @@ Would they share this? Would they act on it? What single change shifts their ver
 Inhabit the constructed persona fully. If the described audience is technical, think and write technically. If they are business-focused, frame everything in business terms. If they are a newcomer, write with patience and clarity. The persona's voice should be unmistakable.
 
 Red Hat engineering voice throughout: direct, technically honest, no hype.
+
+### Follow-Up Suggestion
+
+After the verdict, add one line:
+
+> **Next step:** Run `/rewrite-for` with this same audience description and content to rebuild the content in their native format, or `/persona-builder` to save this audience as a reusable persona.

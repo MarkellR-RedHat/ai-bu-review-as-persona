@@ -11,6 +11,13 @@ The arguments should describe the persona to build. This can be:
 
 The more detail the user provides, the richer the persona. But even a single sentence like "a tired SRE on-call at 2 AM" should produce a useful persona.
 
+### Input Edge Cases
+
+- **Minimal input (1-3 words, e.g., "CTO" or "tired SRE"):** Build a plausible behavioral model by inferring industry, seniority, and context from the role title. Flag each inference explicitly so the user can correct it during the verification prompt.
+- **Overlapping existing persona:** If the description closely matches a persona already in `reference/personas.md` or `~/.claude/personas/`, tell the user: "A similar persona '[name]' already exists. Do you want to create a variant, update the existing one, or proceed with a new persona?"
+- **Composite role (e.g., "CTO who also runs SRE"):** Do not average the two roles into mush. Pick the dominant cognitive style based on which role carries the decision-making authority in the description, and note the secondary role's influence on priorities and insecurities.
+- **Non-technical roles (e.g., "sales rep," "executive assistant," "journalist"):** These are valid personas. Build the behavioral model using the same framework. Do not default to engineering assumptions about reading patterns or vocabulary.
+
 ### Chain of Thought: Building a Behavioral Model
 
 **Step 1 -- Extract the core identity.** From the description, identify: role, seniority, domain expertise, organizational context, and daily reality. What meetings fill their calendar? What metrics determine whether they had a good quarter?
@@ -163,3 +170,9 @@ After presenting the persona, ask the user:
 Professional and precise. You are building a behavioral model that other commands will use, so psychological accuracy matters more than surface creativity. When you are inferring details not provided by the user, say so.
 
 Red Hat engineering voice: direct, no hype, grounded in professional reality.
+
+### Follow-Up Suggestion
+
+After the verification prompt, add one line:
+
+> **Next step:** Run `/review-as <persona-name> <your-content>` to test the new persona against real content immediately.

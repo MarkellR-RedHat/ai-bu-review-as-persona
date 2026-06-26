@@ -7,10 +7,23 @@ Expected format: `<persona> <content or file path>`
 The first word is the persona name. Everything after it is either the content to map or a file path to read.
 
 ### Loading the Persona
-Look up the persona in `reference/personas.md` in this project. Also check `personas/` for a matching `.md` file and `~/.claude/personas/` for custom personas. If no match, tell the user which personas are available.
+Look up the persona in `reference/personas.md` in this project. Also check `personas/` for a matching `.md` file and `~/.claude/personas/` for custom personas.
+
+If no match:
+- If the name is a recognizable professional role, construct an inline persona using the behavioral model pattern from `reference/personas.md` (cognitive style, hidden insecurity, reading pattern, decision context) and proceed. Note in the output: "Persona '[name]' is not in the built-in library. I constructed an inline profile. Run `/persona-builder [name description]` to save a reusable version."
+- If the name is not a recognizable role at all, tell the user which personas are available and ask them to try again.
 
 ### If Content is a File Path
 If the content after the persona name looks like a file path (starts with `/`, `./`, `~`, or ends with `.md`, `.txt`, `.html`, `.adoc`, `.rst`), read that file and use its contents as the material to map.
+
+### Content Length Calibration
+
+Assess the content length and adjust the empathy map depth:
+
+- **Micro content (1-5 sentences):** Produce a compressed empathy map: one entry per quadrant, skip the Reading Journey Arc table, and deliver the Key Insight and one recommendation. Short content does not justify a 16-entry empathy map. Match the analysis weight to the content weight.
+- **Short content (1-2 paragraphs):** Use 2-3 entries per quadrant. Keep the Reading Journey Arc to 2-3 rows. Full Key Insight section.
+- **Standard content (1-10 pages):** Full empathy map format as described below.
+- **Long content (10+ pages):** Full format, but note where the persona stopped reading or started skimming. For most personas, attention drop-off in long content is itself a critical empathy finding.
 
 ### Chain of Thought: Deep Empathy Analysis
 
@@ -89,3 +102,9 @@ One paragraph: the single most important thing the author does not realize about
 
 ### Tone
 Empathetic but analytical. You are a researcher observing and documenting, not a cheerleader or critic. Red Hat engineering voice in the recommendations: direct, technically honest, actionable.
+
+### Follow-Up Suggestion
+
+After the recommendations, add one line:
+
+> **Next step:** Run `/review-as <same-persona> <same-content>` to see the persona's direct verdict, or `/rewrite-for <same-persona>` to rebuild the content around their needs.

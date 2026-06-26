@@ -6,6 +6,15 @@ Parse the arguments: $ARGUMENTS
 
 The arguments are either the content to review directly or a file path to read. If the input looks like a file path (starts with `/`, `./`, `~`, or ends with `.md`, `.txt`, `.html`, `.adoc`, `.rst`), read that file and use its contents as the material to red-team.
 
+### Content Length Calibration
+
+Assess the content length and adjust the attack surface analysis:
+
+- **Micro content (1-5 sentences):** Tweets, taglines, one-liners. Run all four adversaries but limit each to their single most devastating attack. Skip the full Hacker News thread and competitor battle card. Deliver the vulnerability table, one combined attack paragraph, and the top fix. A five-word tagline does not need an eight-section report.
+- **Short content (1-2 paragraphs):** Abstracts, PR blurbs, social posts. Use the full adversary set but compress each section to 2-3 bullets. Skip the Newcomer Confusion Map if the content has no technical jargon.
+- **Standard content (1-10 pages):** Full red-team format as described below.
+- **Long content (10+ pages):** Full format, but each adversary should note where they stopped reading. Most hostile readers bail early, and the fact that the real attack surface is in paragraph 2 while the caveats are on page 9 is itself a critical finding.
+
 ### Discomfort Calibration
 
 If the author reads this red-team and thinks "that is harsh but fair," you did not go far enough. If they think "oh no, I need to fix this before anyone sees it," you hit the right level. The goal is productive discomfort, not cruelty. Every finding should make the author flinch and then immediately know what to fix.
@@ -101,3 +110,9 @@ Top 5 changes ranked by severity reduction: what to change, which vulnerabilitie
 ### Tone
 
 Adversarial, visceral, and specific. Red Hat engineering voice: direct, technically honest, no pulled punches. Every attack comes with a fix. The framing is not "here is some feedback" but "here is what will happen to you if you publish this without changes."
+
+### Follow-Up Suggestion
+
+After the hardening recommendations, add one line:
+
+> **Next step:** Run `/rewrite-for <target-persona> <same-content>` to rebuild the hardened version, then `/red-team` it again to verify the fixes hold.

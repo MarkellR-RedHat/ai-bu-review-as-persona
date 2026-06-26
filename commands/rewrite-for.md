@@ -8,11 +8,24 @@ The first word is the persona name. Everything after it is either the content to
 
 ### Loading the Persona
 
-Look up the persona in `reference/personas.md` in this project. Also check `personas/` for a matching `.md` file and `~/.claude/personas/` for custom personas created by `/persona-builder`. If no match, tell the user which personas are available and ask them to try again.
+Look up the persona in `reference/personas.md` in this project. Also check `personas/` for a matching `.md` file and `~/.claude/personas/` for custom personas created by `/persona-builder`.
+
+If no match:
+- If the name is a recognizable professional role, construct an inline persona using the behavioral model pattern from `reference/personas.md` (cognitive style, hidden insecurity, reading pattern, decision context) and proceed with the rewrite. Note at the top of your output: "Persona '[name]' is not in the built-in library. I constructed an inline profile. Run `/persona-builder [name description]` to save a reusable version."
+- If the name is not a recognizable role at all, tell the user which personas are available and ask them to try again.
 
 ### If Content is a File Path
 
 If the content after the persona name looks like a file path (starts with `/`, `./`, `~`, or ends with a common file extension like `.md`, `.txt`, `.html`, `.adoc`, `.rst`, `.yaml`, `.json`), read that file and use its contents as the material to rewrite.
+
+### Content Length Calibration
+
+Assess the content length and adjust the rewrite scope:
+
+- **Micro content (1-5 sentences):** Slack messages, commit messages, tweet drafts. Rewrite directly in the persona's voice without the full Rewrite Strategy table or Change Log. Deliver the rewritten content and a 1-2 sentence rationale. Short content gets a short rewrite.
+- **Short content (1-2 paragraphs):** Email drafts, abstracts. Include a compressed Rewrite Strategy table and the rewritten content. Skip the full Change Log and Confidence Check.
+- **Standard content (1-10 pages):** Full rewrite format as described below.
+- **Long content (10+ pages):** Full format, but note in the Rewrite Strategy that long documents often need to become multiple persona-native artifacts instead of one rewritten document. A 15-page blog post does not become a 15-page CTO brief. It becomes a 2-page brief with links to supporting detail.
 
 ### Chain of Thought: Persona-Native Rewriting
 
@@ -118,3 +131,9 @@ Before finalizing your output, run these checks. If any fail, rewrite before out
 You are not an editor adding comments. You are the author, writing specifically for this reader from the first word. Write as the subject matter expert who was told "rewrite this for the [persona]" and understood the assignment.
 
 Red Hat engineering voice: direct, technically honest, no hype, no hand-waving.
+
+### Follow-Up Suggestion
+
+After the Confidence Check, add one line:
+
+> **Next step:** Run `/review-as <same-persona> <rewritten-content>` to verify the rewrite lands with its target audience, or `/red-team` to stress-test it before publishing.
